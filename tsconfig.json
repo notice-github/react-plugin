@@ -1,0 +1,27 @@
+{
+	"include": ["src"],
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "ESNext",
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true,
+
+		/* Output */
+		"outDir": "lib",
+		"declaration": true,
+
+		/* Bundler mode */
+		"moduleResolution": "Bundler",
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+
+		/* Lotting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true
+	}
+}

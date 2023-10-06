@@ -1,0 +1,57 @@
+{
+	"name": "@notice-org/react",
+	"version": "2.0.0",
+	"description": "Notice React plugin",
+	"license": "MIT",
+	"type": "module",
+	"main": "./lib/notice.umd.cjs",
+	"module": "./lib/notice.js",
+	"types": "./lib/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./lib/notice.js",
+			"require": "./lib/notice.umd.cjs",
+			"types": "./lib/index.d.ts"
+		}
+	},
+	"files": [
+		"lib"
+	],
+	"homepage": "https://notice.studio",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/notice-github/react-plugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/notice-github/react-plugin/issues"
+	},
+	"author": {
+		"name": "Notice Studio",
+		"email": "jonas.roussel@notice.studio",
+		"url": "https://notice.studio"
+	},
+	"keywords": [
+		"notice",
+		"react",
+		"integration"
+	],
+	"scripts": {
+		"build": "vite build && tsc --emitDeclarationOnly",
+		"test": "tsc --noEmit",
+		"prepublishOnly": "pnpm run build"
+	},
+	"dependencies": {
+		"@notice-org/ntc": "^1.0.1"
+	},
+	"peerDependencies": {
+		"react": ">=16"
+	},
+	"devDependencies": {
+		"@types/node": "^20.5.6",
+		"@types/react": "^16.9.49",
+		"@vitejs/plugin-react": "^4.1.0",
+		"react": "^16.14.0",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.11"
+	}
+}

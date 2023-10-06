@@ -1,0 +1,20 @@
+# NodeJS
+node_modules
+.npmrc
+
+# Build Output
+lib/
+
+# Turborepo
+.turbo
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Misc
+.DS_Store
+.vscode/
