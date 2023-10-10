@@ -25,23 +25,25 @@ export const Notice: FC<Props> = (props) => {
 		if (state.current !== 'idle') return
 		state.current = 'loading'
 
-		const { pageId, navigationType = 'memory', children, ...params } = props
+		const { pageId, children, ...params } = props as Record<string, any>
 
-		NTCBrowser.queryDocument(pageId, { navigationType, ...params }, { signal: abortController.current.signal }).then(
-			(res) => {
-				if (!res.ok) {
-					if (res.error !== 'aborted') state.current = 'error'
-					return
-				}
+		// Default & forced values
+		params['navigationType'] ??= 'memory'
+		params['integration'] = 'react-npm'
 
-				state.current = 'success'
-
-				const wrapper = extractWrapper(res.data)
-				setBody(
-					<div id={wrapper.id} className="NTC_wrapper" dangerouslySetInnerHTML={{ __html: wrapper.innerHTML }}></div>
-				)
+		NTCBrowser.queryDocument(pageId, params, { signal: abortController.current.signal }).then((res) => {
+			if (!res.ok) {
+				if (res.error !== 'aborted') state.current = 'error'
+				return
 			}
-		)
+
+			state.current = 'success'
+
+			const wrapper = extractWrapper(res.data)
+			setBody(
+				<div id={wrapper.id} className="NTC_wrapper" dangerouslySetInnerHTML={{ __html: wrapper.innerHTML }}></div>
+			)
+		})
 	}, [props])
 
 	if (!body) return props.children ?? <></>
