@@ -33,7 +33,13 @@
 	"keywords": [
 		"notice",
 		"react",
-		"integration"
+		"integration",
+		"blog",
+		"faq",
+		"documentation",
+		"help center",
+		"headless CMS",
+		"job board"
 	],
 	"scripts": {
 		"build": "vite build && tsc --emitDeclarationOnly",
