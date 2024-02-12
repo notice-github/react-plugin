@@ -1,0 +1,6 @@
+Hey!
+
+Don't do a manual release, go to github > releases to publish a new version of the npm package.
+Draft new release > choose a tag > put your version as explained below.
+Format: vx.x.x (ex: v2.1.1)
+Check workflows in .github to understand how it works.
